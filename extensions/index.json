@@ -1,0 +1,27 @@
+{
+  "version": "v1",
+  "blocklist": [],
+  "data": [
+    {
+      "schema_version": "1.0.0",
+      "id": "terrain_authoring",
+      "version": "0.1.0",
+      "name": "Terrain Toolbox",
+      "tagline": "Author volumetric terrain across connected world-space tiles",
+      "maintainer": "Standard Logic Labs",
+      "type": "add-on",
+      "website": "https://github.com/Standard-Logic-Labs/blender-terrain-toolbox",
+      "tags": [
+        "Add Mesh",
+        "Mesh"
+      ],
+      "blender_version_min": "5.2.0",
+      "license": [
+        "SPDX:GPL-3.0-or-later"
+      ],
+      "archive_url": "https://raw.githubusercontent.com/Standard-Logic-Labs/blender-terrain-toolbox/main/extensions/terrain_authoring-0.1.0.zip",
+      "archive_size": 23054,
+      "archive_hash": "sha256:d6cb5c421e9eb4a2a004a9da8ea7d303d23a7a81b86ed9fe1771213a46640842"
+    }
+  ]
+}

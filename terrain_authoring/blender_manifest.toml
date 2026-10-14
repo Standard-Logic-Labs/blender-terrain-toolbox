@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+id = "terrain_authoring"
+version = "0.1.0"
+name = "Terrain Toolbox"
+tagline = "Author volumetric terrain across connected world-space tiles"
+maintainer = "Standard Logic Labs"
+type = "add-on"
+website = "https://github.com/Standard-Logic-Labs/blender-terrain-toolbox"
+tags = ["Add Mesh", "Mesh"]
+blender_version_min = "5.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+[build]
+paths_exclude_pattern = ["__pycache__/", "*.pyc", ".git/", "*.zip"]
