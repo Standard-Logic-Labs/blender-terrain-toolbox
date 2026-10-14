@@ -2,7 +2,7 @@
 
 Not yet executed by the authoring environment. Record actual Blender version and OS before marking these passed.
 
-1. **Remote install.** Add the README index URL under Preferences > Get Extensions repositories. Refresh; install Terrain Toolbox 0.1.0. Confirm no traceback and the Terrain tab appears in the 3D View sidebar. Disable/re-enable once; no duplicate panel/classes.
+1. **Remote install.** Add the README index URL under Preferences > Get Extensions repositories. Refresh; install Terrain Toolbox 0.1.1. Confirm no traceback and the Terrain tab appears in the 3D View sidebar. Disable/re-enable once; no duplicate panel/classes.
 2. **Creation and scale.** Start a fresh General scene in Object Mode. Ensure Preferences > System > Memory & Limits > Global Undo is enabled. Click Create Two Preview Tiles and Frame Terrain. Confirm the panel shows two tiles at 32 m voxel spacing. Check scene Metric units and scale 1. Terrain [0,0] spans X/Y 0–512; Terrain [1,0] spans X 512–1024, Y 0–512. The default cube remains untouched.
 3. **Guide versus density.** Zoom near the surface, preferably top orthographic (Numpad 7). The reference grid is 1 m spacing on its own Z plane and appears in front; major lines repeat at 10 m. Toggle guide off/on. Toggle Mesh Wireframe separately: triangulation is much coarser than the guide. Change major interval to 5 m in Build Settings. Guide is excluded from rendering and selection. Test guide appearance in Solid and Material Preview.
 4. **Volumetric seam cut.** Click Add Boundary Test Cut. Frame Terrain if needed. Inspect around world (512,256,-32). The cavity crosses X=512 and extends below the upper surface, with an overhanging wall. Disable the guide for seam inspection. Inspect from above, below, and along the boundary in smooth Solid shading and wireframe. No open internal seam or shading stripe should appear. Outer terrain borders are intentionally open.
@@ -13,3 +13,7 @@ Not yet executed by the authoring environment. Record actual Blender version and
 9. **Ownership.** Add an unrelated mesh, then reset/rebuild terrain. Unrelated mesh survives. Terrain copies linked across two scenes must be rejected before rebuild, not silently overwrite another scene.
 
 If a step fails, send the full console traceback, exact step/button sequence, Blender version from the panel, OS, and whether using a remote install or a development checkout. Keep the failing .blend if source-specific.
+
+## 0.1.1 registration regression
+
+Update the remote installation to 0.1.1, restart Blender if 0.1.0 activation failed, and enable Terrain Toolbox. The old class-level API error must no longer block registration. Create two tiles and apply the boundary cut; inspect the seam with the guide hidden. If generation reports an actual missing instance method, send its full traceback and the exact version displayed in the panel.

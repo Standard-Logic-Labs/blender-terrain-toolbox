@@ -5,7 +5,7 @@
     {
       "schema_version": "1.0.0",
       "id": "terrain_authoring",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "name": "Terrain Toolbox",
       "tagline": "Author volumetric terrain across connected world-space tiles",
       "maintainer": "Standard Logic Labs",
@@ -19,9 +19,9 @@
       "license": [
         "SPDX:GPL-3.0-or-later"
       ],
-      "archive_url": "https://raw.githubusercontent.com/Standard-Logic-Labs/blender-terrain-toolbox/main/extensions/terrain_authoring-0.1.0.zip",
-      "archive_size": 23054,
-      "archive_hash": "sha256:d6cb5c421e9eb4a2a004a9da8ea7d303d23a7a81b86ed9fe1771213a46640842"
+      "archive_url": "https://raw.githubusercontent.com/Standard-Logic-Labs/blender-terrain-toolbox/main/extensions/terrain_authoring-0.1.1.zip",
+      "archive_size": 23674,
+      "archive_hash": "sha256:725f08b12609b9ad8f6469ff3ba1409b9242f72351b85cc55b8ea84e14c8eb1c"
     }
   ]
 }

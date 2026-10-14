@@ -14,6 +14,13 @@ args = sys.argv[sys.argv.index('--')+1:]
 phase, output = args[0],Path(args[1])
 terrain_authoring.register()
 print('INTEGRATION BLENDER VERSION:',bpy.app.version_string)
+probe = bpy.data.meshes.new('Terrain Normal API Probe')
+try:
+    print('Class-level normal method:', hasattr(bpy.types.Mesh, 'normals_split_custom_set_from_vertices'))
+    assert (callable(getattr(probe, 'normals_split_custom_set_from_vertices', None))
+            or callable(getattr(probe, 'normals_split_custom_set', None)))
+finally:
+    bpy.data.meshes.remove(probe)
 
 
 def signature(scene):

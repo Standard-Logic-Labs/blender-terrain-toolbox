@@ -3,6 +3,7 @@ import uuid
 import bpy
 from .core import state
 from .core.meshing import extract_tile
+from .normals import set_shared_normals
 
 SOURCE_KEY = 'terrain_authoring_source_v1'
 OWNER_KEY = 'terrain_authoring_owner'
@@ -74,7 +75,7 @@ def rebuild(scene, source):
             if normals is not None:
                 for poly in mesh.polygons:
                     poly.use_smooth = True
-                mesh.normals_split_custom_set_from_vertices(normals)
+                set_shared_normals(mesh, normals, bpy.app.version_string)
             obj = bpy.data.objects.new(name,mesh)
             staged_objects.append(obj)
             obj[OWNER_KEY],obj['terrain_role'] = source['group_id'],role

@@ -1,6 +1,6 @@
 # Blender Terrain Toolbox
 
-A small, editable volumetric terrain prototype for **Blender 5.2.2 LTS** (user-supplied target). Version **0.1.0**, milestone 1. Blender is unavailable in the authoring environment: UI, undo/redo, actual `.blend` roundtrip and installation are **not yet verified in Blender**. The executable version is printed at registration and in the panel.
+A small, editable volumetric terrain prototype for **Blender 5.2.2 LTS** (user-supplied target). Version **0.1.1**, milestone 1. Blender is unavailable in the authoring environment: UI, undo/redo, actual `.blend` roundtrip and installation are **not yet verified in Blender**. The executable version is printed at registration and in the panel.
 
 ## Install from a remote extension repository
 
@@ -19,7 +19,11 @@ https://raw.githubusercontent.com/Standard-Logic-Labs/blender-terrain-toolbox/ma
 
 Remote installation and menu labels must be confirmed in your Blender build. The index uses Blender's documented v1 static repository format. Hosting requires no GitHub Pages configuration and no updater code or network permissions inside the extension.
 
-Fallback: download [terrain_authoring-0.1.0.zip](https://raw.githubusercontent.com/Standard-Logic-Labs/blender-terrain-toolbox/main/extensions/terrain_authoring-0.1.0.zip) and use **Get Extensions > Install from Disk**. GitHub's **Download ZIP** is the source checkout, not the installable extension.
+Fallback: download [terrain_authoring-0.1.1.zip](https://raw.githubusercontent.com/Standard-Logic-Labs/blender-terrain-toolbox/main/extensions/terrain_authoring-0.1.1.zip) and use **Get Extensions > Install from Disk**. GitHub's **Download ZIP** is the source checkout, not the installable extension.
+
+## 0.1.1 fix
+
+Fixes an incorrect registration-time check on `bpy.types.Mesh` that could report a missing custom-normal API before a mesh existed. Capabilities are now checked on the staged mesh instance during generation. Either documented vertex or corner normal setter retains the same field-derived border normals. No source schema changes. Refresh the remote repository and update to 0.1.1; if the failed 0.1.0 activation left stale modules, restart Blender after updating and enable Terrain Toolbox.
 
 ## What this milestone implements
 
@@ -65,7 +69,7 @@ For fast development, disable the remotely installed copy, restart Blender once 
 4. Validate with your installed Blender:
 
 ```powershell
-& 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' --command extension validate extensions/terrain_authoring-0.1.0.zip
+& 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' --command extension validate extensions/terrain_authoring-0.1.1.zip
 ```
 
 Use the current version's ZIP filename when publishing an update. Commit the source, generated ZIP, and `extensions/index.json` together. Blender's **Refresh / Check for Updates** then sees the newer version. GitHub Actions runs core/package tests and checks package reproducibility; it does not yet run Blender.

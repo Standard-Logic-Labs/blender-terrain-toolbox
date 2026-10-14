@@ -14,7 +14,7 @@ if len(candidates) > 1:
 if candidates:
     name, addon = candidates[0]
     addon.unregister()
-    for module in ('core.state','core.field','core.meshing','bridge','operators','ui'):
+    for module in ('core.state','core.field','core.meshing','normals','bridge','operators','ui'):
         full = f'{name}.{module}'
         if full in sys.modules:
             importlib.reload(sys.modules[full])

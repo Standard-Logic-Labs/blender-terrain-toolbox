@@ -1,6 +1,6 @@
 schema_version = "1.0.0"
 id = "terrain_authoring"
-version = "0.1.0"
+version = "0.1.1"
 name = "Terrain Toolbox"
 tagline = "Author volumetric terrain across connected world-space tiles"
 maintainer = "Standard Logic Labs"

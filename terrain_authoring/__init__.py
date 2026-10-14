@@ -6,9 +6,8 @@ _registered_classes = []
 def register():
     import bpy
     from . import operators,ui
-    # Version is reported, never inferred. Check the critical mesh capability.
-    if not hasattr(bpy.types.Mesh,'normals_split_custom_set_from_vertices'):
-        raise RuntimeError('This Blender build lacks the required custom vertex-normal API.')
+    # RNA mesh functions are bound on instances; do not probe bpy.types.Mesh.
+    # Normals are checked when an undoable build has an actual staged mesh.
     if _registered_classes:
         return
     registered = []
@@ -21,7 +20,7 @@ def register():
             bpy.utils.unregister_class(cls)
         raise
     _registered_classes.extend(registered)
-    print(f'Terrain Authoring 0.1.0 registered in Blender {bpy.app.version_string}')
+    print(f'Terrain Authoring 0.1.1 registered in Blender {bpy.app.version_string}')
 
 
 def unregister():
